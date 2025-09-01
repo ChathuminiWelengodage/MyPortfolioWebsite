@@ -156,6 +156,7 @@ body
     max-width: 630px;
 }
 .about-text h2{
+    padding-top: 1px;
     font-size: 60px;
 
 }
