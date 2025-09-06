@@ -16,15 +16,17 @@
     <header class="header">
         <a href="a" class="logo">Portfolio</a>
 
+        <i class='bx bx-menu' id="menu-icon"></i>
+
         <nav class="navbar">
-            <a href="#Home" style="--i:1"class="active">Home</a>
-            <a href="#About" style="--i:2">About</a>
-            <a href="#Skill" style="--i:3">Skill</a>
-            <a href="#Portfolio" style="--i:4">Portfolio</a>
-            <a href="#Contact" style="--i:5">Contact</a>
+            <a href="#home" style="--i:1"class="active">Home</a>
+            <a href="#about" style="--i:2">About</a>
+            <a href="#myskills" style="--i:3">Skill</a>
+            <a href="#project" style="--i:4">Portfolio</a>
+            <a href="#c ontact" style="--i:5">Contact</a>
         </nav>
     </header>
-    <section class="home">
+    <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, It's me</h3>
             <h1>Chathumini Welengodage</h1>
@@ -200,7 +202,42 @@
     </div>
 </section>
 
+<section class="contact" id="contact">
+    <div class="contact-container">
+        <div class="contact-box">
+            <h2>Let's Work Together</h2>
+            <p class="desc">Have a question or want to work together? Drop me a message below or reach out via email.</p>
+            <div class="contact-details">
+                <i class='bx bxs-phone'></i>
+                <div class="detail">
+                    <p>Phone</p>
+                    <p>0704675988</p>
+                </div>
+            </div>
+            <div class="contact-details">
+                <i class='bx bx-envelope' ></i>
+                <div class="detail">
+                    <p>Email</p>
+                    <p>chathuminiwelengodage@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-box">
+            <form action="">
+                <h2 class="heading">Contact <span>Me!</span></h2>
+                <div class="field-box">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Email Address" required>
+                    <input type="text" placeholder="Phone Number" required>
+                    <input type="text" placeholder="Email Subject" required>
+                    <textarea name="" id="" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
 
+</section>
 
 
 
