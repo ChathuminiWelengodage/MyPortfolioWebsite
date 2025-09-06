@@ -16,7 +16,7 @@ body
     left:0;
     width:100%;
     padding: 20px 10%;
-    background: rgb(0, 0, 0);
+    background: rgb(53, 49, 49);
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +35,7 @@ body
 }
 .navbar a{
     display: inline-block;
-    font-size: 25px;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -46,7 +46,7 @@ body
     animation-delay: calc(.2s * var(--i));
 }
 .navbar a:hover{
-    color: purple;
+    color: #4A90E2;
 }
 .home{
     position: relative;
@@ -76,14 +76,14 @@ body
     animation-delay: .7s;
 }
 .home-content h3 span{
-    color: rgb(240, 66, 240);
+    color: #4A90E2;
     padding-top: 10px;
 }
 .home-content h1{
     font-size: 45px;
     font-weight: 700;
     margin: -3px 0;
-    color: rgb(237, 187, 237);
+    color: #4A90E2;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: 1s;
@@ -103,10 +103,10 @@ body
     align-items: center;
     width: 29px;
     background: transparent;
-    border: 2px solid purple;
+    border: 2px solid #fff;
     border-radius: 100%;
     font-size: 20px;
-    color:purple;
+    color:#fff;
     text-decoration: none;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
@@ -115,14 +115,14 @@ body
     margin: 60px 15px 30px 0;
 }
 .home-sci a:hover {
-    background: purple;
+    background: #4A90E2;
     color: black;
-    box-shadow: 0 0 20px purple;
+    box-shadow: 0 0 20px #4A90E2;
 }
 .btn-box {
     display: inline-block;
     padding: 12px 28px;
-    background: purple;
+    background: #4A90E2;
     border-radius: 40px;
     font-size: 16px;
     color:black;
@@ -132,10 +132,11 @@ body
     opacity: 0;
     animation:slideTop 1s ease forwards;
     animation-delay: 2s;
-    box-shadow: 0 0 5px purple,0 0 25px purple;
+    
+    box-shadow: 0 0 5px #4A90E2,0 0 25px #4A90E2;
 }
 .btn-box:hover{
-    box-shadow: 0 0 5px purple, 0 0 25px purple, 0 0 50px purple, 0 0 100px purple, 0 0 200px purple;
+    box-shadow: 0 0 5px #4A90E2;
 }
 
 .about{
@@ -157,26 +158,352 @@ body
 }
 .about-text h2{
     padding-top: 1px;
-    font-size: 60px;
+    font-size: 55px;
 
 }
 .about-text h2 span{
-    color: #fff;
+    color: #4A90E2;
 }
 .about-text h4{
     font-size: 29px;
     font-weight: 600;
-    color: purple;
+    color: #4A90E2;
     line-height: 1.7;
     margin:15px 0 30px;
 }
 .about-text p{
-    color:rgb(222, 195, 222);
+    color:#ededed;
     font-size: 18px;
     line-height: 1.4;
     margin-bottom: 4rem;
     
 }
+/* ===== Skills Section ===== */
+.myskills {
+    width: 100%;
+    height: 100vh;
+    padding: 40px 10%;
+    background: url(5.jpg); /* Light background */
+    text-align: center;
+}
+
+/* Headings */
+.myskills h2 {
+    font-size: 55px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.myskills h2 span {
+    color: #4A90E2; /* Accent color */
+}
+
+.myskills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Skill Bars Container */
+.Technical-bars {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Each Bar */
+.bar {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icon Style */
+.bar i {
+    font-size: 30px;
+    min-width: 40px;
+}
+
+/* Skill Name */
+.bar .info {
+    flex: 1;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Progress Line Container */
+.progress-line {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #e6e6e6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Base span (start at 0) */
+.progress-line span {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    border-radius: 5px;
+    width: 0;  /* Start empty */
+}
+
+/* Animate each skill with its own keyframes */
+.progress-line.html span {
+    background: #E44D26;
+    animation: htmlGrow 2s ease forwards;
+}
+.progress-line.css span {
+    background: #264de4;
+    animation: cssGrow 2s ease forwards;
+}
+.progress-line.JavaScript span {
+    background: #f7df1e;
+    animation: jsGrow 2s ease forwards;
+}
+.progress-line.Python span {
+    background: #3776AB;
+    animation: pyGrow 2s ease forwards;
+}
+
+/* Keyframes for each */
+@keyframes htmlGrow {
+    from { width: 0; }
+    to { width: 90%; }
+}
+@keyframes cssGrow {
+    from { width: 0; }
+    to { width: 75%; }
+}
+@keyframes jsGrow {
+    from { width: 0; }
+    to { width: 45%; }
+}
+@keyframes pyGrow {
+    from { width: 0; }
+    to { width: 10%; }
+}
+
+
+
+
+/* ==== Soft Skills Section ==== */
+.skills-text {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.skills-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Radial Bars Container */
+.radial-bars {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* SVG Circle Base (Background Circle) */
+.radial-bars svg {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    transform: rotate(-90deg); /* So progress starts at top */
+}
+
+/* Gray Background Circle */
+.radial-bars .progress-line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 15;
+    stroke-linecap: round;
+}
+
+/* Animated Progress Circle */
+.radial-bars .path {
+    fill: none;
+    stroke: #4A90E2; /* Default color */
+    stroke-width: 15;
+    stroke-linecap: round;
+    stroke-dasharray: 502;   /* 2πr where r=80 → 2*π*80 ≈ 502 */
+    stroke-dashoffset: 502;  /* Hidden at start */
+    animation: progress 2s ease forwards;
+}
+
+/* Different Path Colors */
+/*.radial-bars:nth-child(2) .path { stroke: #f39c12; }/* Creativity */
+/*.radial-bars:nth-child(3) .path { stroke: #A020F0; } /* Problem Solving */
+/*.radial-bars:nth-child(4) .path { stroke: #2ecc71; } /* Team Work */
+
+/* Percentage in Middle */
+.radial-bars .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Label Below Circle */
+.radial-bars .text {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+/* Base */
+.skills-text { text-align:center; margin-top:40px; }
+.skills-text h3 { font-size:1.8rem; margin-bottom:24px; color:#fff; }
+
+.radial-bars{
+  --circ: 502;          /* 2πr for r=80 */
+  --val: 0;             /* % (set per item below) */
+  --stroke: #4A90E2;    /* color (set per item below) */
+  --offset: calc(var(--circ) - (var(--circ) * var(--val) / 100));
+
+  position:relative;
+  width:180px; height:180px;
+  margin:14px; display:inline-block;
+}
+
+.radial-bars svg{ width:180px; height:180px; transform:rotate(-90deg); }
+.radial-bars .progress-line{
+  fill:none; stroke:#e6e6e6; stroke-width:15; stroke-linecap:round;
+}
+.radial-bars .path{
+  fill:none; stroke:var(--stroke); stroke-width:15; stroke-linecap:round;
+  stroke-dasharray: var(--circ);
+  stroke-dashoffset: var(--circ);
+  animation: rb-fill 1.6s ease forwards;
+}
+.radial-bars .percentage{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-weight:700; color:#fff;
+}
+.radial-bars .text{ margin-top:10px; font-weight:600; color:#fff; }
+
+@keyframes rb-fill { to { stroke-dashoffset: var(--offset); } }
+
+/* Correct mapping using nth-of-type: 1..4 are your four .radial-bars */
+.skills-text > .radial-bars:nth-of-type(1){ --val:65; --stroke:#4A90E2; } /* Communication */
+.skills-text > .radial-bars:nth-of-type(2){ --val:75; --stroke:#f39c12; } /* Creativity */
+.skills-text > .radial-bars:nth-of-type(3){ --val:60; --stroke:#A020F0; } /* Problem Solving */
+.skills-text > .radial-bars:nth-of-type(4){ --val:85; --stroke:#2ecc71; } /* Team Work */
+
+
+
+/* Animation Keyframes */
+@keyframes progress {
+    to {
+        stroke-dashoffset: var(--percent); /* Will set with CSS variable */
+    }
+}
+
+.portfolio{
+    width: 100%;
+    height: 100vh;
+    padding: 40px 10%;
+    background: url(9.jpg);
+    text-align: center;
+}
+.main-text{
+    padding-top: 80px;
+    margin-top: 50px;
+}
+.main-text h2{
+    font-size: 55px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+.main-text h2 span {
+    color: #4A90E2; 
+}
+/* Portfolio Content - Stack in Column */
+.portfolio-content {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+}
+
+/* Each Row (Project Card) */
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #4A90E2;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+
+.row:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Image */
+.row img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay Layer */
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 144, 226, 0.9); /* Blue overlay */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.row:hover .layer {
+    opacity: 1;
+}
+
+/* Layer Text */
+.layer h4 {
+    font-size: 20px;
+    margin: 20px 10px;
+    font-weight: bold;
+}
+
+.layer p {
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
 
 
 @keyframes slideRight{
