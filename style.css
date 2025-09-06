@@ -52,96 +52,119 @@ body
     font-size: 16px;
     display: none;
 }
-.home{
-    position: relative;
-    width: 100%;
-    justify-content: space-between;
-    height: 100vh;
-    background: url(1.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+
+/* ===== Home Section ===== */
+.home {
     display: flex;
     align-items: center;
-    padding: 70px 10% 0;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #333); 
+    color: #fff;
 }
+
+/* ===== Left Content ===== */
 .home-content {
     max-width: 600px;
 }
-.home-content h3 {
-    font-size: 30px;
-    font-weight: 600;
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-    animation-delay: .7s;
-}
-.home-content h3:nth-of-type(2){
-    margin-bottom: 30px;
-    animation: slideTop 1s ease forwards;
-    animation-delay: .7s;
-}
-.home-content h3 span{
-    color: #4A90E2;
-    padding-top: 10px;
-}
-.home-content h1{
-    font-size: 45px;
-    font-weight: 700;
-    margin: -3px 0;
-    color: #4A90E2;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
-   
-}
-.home-content p {
-    padding-top: 20px;
-    font-size: 20px;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
 
+.home-content h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff; /* soft accent */
 }
-.home-sci a{
-    display: inline flex;
-    justify-content: center;
+
+.home-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 5px;
+    color: #4A90E2;
+}
+
+.home-content h3 span.text {
+    color: #4A90E2; /* bright cyan for highlight */
+    font-weight: bold;
+}
+
+.home-content p {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+/* ===== Social Icons ===== */
+.home-sci {
+    margin: 25px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.home-sci a {
+    display: inline-flex;
     align-items: center;
-    width: 29px;
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    font-size: 20px;
-    color:#fff;
-    text-decoration: none;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-    transition: .5s ease;
-    margin: 60px 15px 30px 0;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    border: 2px solid #38bdf8;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: 0.3s ease;
 }
+
 .home-sci a:hover {
-    background: #4A90E2;
-    color: black;
-    box-shadow: 0 0 20px #4A90E2;
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-5px);
 }
+
+/* ===== Button Style ===== */
 .btn-box {
     display: inline-block;
-    padding: 12px 28px;
-    background: #4A90E2;
-    border-radius: 40px;
-    font-size: 16px;
-    color:black;
-    letter-spacing: 1px;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    opacity: 0;
-    animation:slideTop 1s ease forwards;
-    animation-delay: 2s;
-    
-    box-shadow: 0 0 5px #4A90E2,0 0 25px #4A90E2;
+    transition: 0.3s ease;
 }
-.btn-box:hover{
-    box-shadow: 0 0 5px #4A90E2;
+
+.btn-box:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
 }
+
+/* ===== Right Image Box ===== */
+.home-img .img-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #38bdf8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+.home-img .img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ensures it doesn’t stretch */
+    border-radius: 50%
+
+}
+
+.home-img .img-item img:hover {
+    transform: scale(1.05);
+}
+
 
 .about{
     position: relative;
