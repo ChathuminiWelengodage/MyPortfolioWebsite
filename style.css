@@ -7,7 +7,7 @@
 }
 body
 {
-    color:#ededed;
+    color:#333;
 }
 .header {
     position: fixed;
@@ -357,6 +357,7 @@ body
 
 /* Text */
 .about-text h2 {
+    color: #fff;
     font-size: 55px;
     font-weight: 700;
     margin-bottom: 15px;
