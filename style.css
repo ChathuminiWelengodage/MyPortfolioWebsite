@@ -9,49 +9,137 @@ body
 {
     color:#ededed;
 }
-.header
-{
+.header {
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 20px 10%;
-    background: rgb(53, 49, 49);
-    display:flex;
+    background: rgb(73, 68, 68);
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
-.logo
-{
-    position: relative;
+
+.logo {
     font-size: 25px;
     color: #fff;
-    text-decoration: none;
     font-weight: 600;
-    cursor: default;
-    opacity: 0;
+    text-decoration: none;
+    opacity: 1;
     animation: slideRight 1s ease forwards;
 }
-.navbar a{
-    display: inline-block;
-    font-size: 16px;
+
+.navbar {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
+    transition: 0.3s;
     opacity: 0;
-    animation: slideTop .5s ease forwards;
+    animation: slideTop 0.5s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
-.navbar a:hover{
+
+.navbar a:hover {
     color: #4A90E2;
 }
+
+/* Hamburger */
 #menu-icon {
-    font-size: 16px;
     display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
+
+#menu-icon span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.4s;
+
+}
+/* Active hamburger animation */
+#menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+#menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Tablet (≤ 991px) */
+@media (max-width: 991px) {
+  .navbar a {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: flex;
+  }
+}
+
+/* Desktop spacing fixes */
+@media (max-width: 991px) {
+    #menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 0;
+        transition: left 0.4s ease;
+    }
+
+    .navbar .active{
+        left: 0;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        padding: 10px 0;
+        display: block;
+        
+    }
+}
+
+/* Mobile (≤ 576px) */
+@media (max-width: 576px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}
+
+
+
 
 /* ===== Home Section ===== */
 .home {
@@ -108,7 +196,7 @@ body
     justify-content: center;
     font-size: 22px;
     color: #fff;
-    border: 2px solid #38bdf8;
+    border: 2px solid #4A90E2;
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -116,7 +204,7 @@ body
 }
 
 .home-sci a:hover {
-    background: #38bdf8;
+    background: #4A90E2;
     color: #0f172a;
     transform: translateY(-5px);
 }
@@ -126,7 +214,7 @@ body
     display: inline-block;
     padding: 12px 25px;
     background: #38bdf8;
-    color: #010305;
+    color: #0f172a;
     font-size: 18px;
     font-weight: bold;
     border-radius: 8px;
@@ -146,7 +234,7 @@ body
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #38bdf8;
+    border: 5px solid #4A90E2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,6 +252,80 @@ body
 .home-img .img-item img:hover {
     transform: scale(1.05);
 }
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== Apply Animations ===== */
+.home-content h3,
+.home-content h1,
+.home-content p,
+.btn-box,
+.home-sci a {
+    opacity: 0; /* hide before animation */
+    animation: fadeInUp 1s ease forwards;
+}
+
+.home-content h3 {
+    animation-delay: 0.3s;
+}
+.home-content h1 {
+    animation-delay: 0.6s;
+}
+.home-content p {
+    animation-delay: 0.9s;
+}
+.btn-box {
+    animation-delay: 1.2s;
+}
+.home-sci a {
+    animation-delay: 1.5s;
+}
+
+/* Social icons with staggered effect */
+.home-sci a:nth-child(1) { animation-delay: 1.5s; }
+.home-sci a:nth-child(2) { animation-delay: 1.7s; }
+.home-sci a:nth-child(3) { animation-delay: 1.9s; }
+.home-sci a:nth-child(4) { animation-delay: 2.1s; }
+
+/* Profile image animation */
+.home-img .img-box {
+    opacity: 0;
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.8s;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 991px) {
     .home-img .img-box {
@@ -223,21 +385,21 @@ body
 /* Button */
 .about-text .btn-box {
     display: inline-block;
-    padding: 12px 28px;
-    background: #4A90E2;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 12px 25px;
+    background: #38bdf8;
     color: #0f172a;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
     text-decoration: none;
     transition: 0.3s ease;
-    box-shadow: 0 0 5px #4A90E2, 0 0 25px #4A90E2;
 }
 
 .about-text .btn-box:hover {
-    background: #0ea5e9;
-    box-shadow: 0 0 15px #4A90E2, 0 0 30px #4A90E2;
+    background: #4A90E2;
+    transform: scale(1.05);
 }
+
 
 /* Image */
 .about-img {
@@ -290,6 +452,74 @@ body
         margin-top: 20px;
     }
 }
+/* ===== Animations ===== */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Apply Animations ===== */
+.about-text h2,
+.about-text h4,
+.about-text p,
+.about-text .btn-box {
+    opacity: 0;
+    animation: fadeInLeft 1s ease forwards;
+}
+
+.about-text h2 {
+    animation-delay: 0.3s;
+}
+.about-text h4 {
+    animation-delay: 0.6s;
+}
+.about-text p {
+    animation-delay: 0.9s;
+}
+.about-text .btn-box {
+    animation-delay: 1.2s;
+}
+
+/* Image Animation */
+.about-img .img-boxs {
+    opacity: 0;
+    animation: fadeInRight 1.2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+/* Add hover animation for fun */
+.about-img .img-items img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
 
 /* ===== Skills Section ===== */
 .myskills {
@@ -654,26 +884,24 @@ form h2.heading span {
 }
 
 /* Submit Button */
-.btn {
-  display: inline-block;
-    padding: 12px 28px;
-    background: #4A90E2;
-    border-radius: 40px;
-    font-size: 16px;
-    color:black;
-    letter-spacing: 1px;
+.contact-box .btn-box{
+    display: inline-block;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
-    opacity: 0;
-    animation:slideTop 1s ease forwards;
-    animation-delay: 2s;
-    
-    box-shadow: 0 0 5px #4A90E2,0 0 25px #4A90E2;
+    transition: 0.3s ease;
 }
 
-.btn:hover {
-  box-shadow: 0 0 5px #4A90E2;
+.about-text .btn-box:hover {
+    background: #4A90E2;
+    transform: scale(1.05);
 }
+
+
 
 /* ===== Contact Form Animations ===== */
 .field-box input,
@@ -703,7 +931,7 @@ form h2.heading span {
 }
 
 .btn:hover {
-  background: #0ea5e9;
+  background: #4A90E2;
   box-shadow: 0 0 15px #4A90E2, 0 0 35px rgba(74, 144, 226, 0.5);
   transform: scale(1.08) translateY(-2px);
 }
@@ -712,6 +940,75 @@ form h2.heading span {
   transform: scale(0.98) translateY(1px);
   box-shadow: 0 0 8px #4A90E2, 0 0 20px rgba(74, 144, 226, 0.4);
 }
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Apply Animations ===== */
+.contact-box {
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+form h2.heading {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.field-box {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.contact-box .btn-box {
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* Make contact details animate individually */
+.contact-details {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.contact-details:nth-child(1) { animation-delay: 0.4s; }
+.contact-details:nth-child(2) { animation-delay: 0.6s; }
+.contact-details:nth-child(3) { animation-delay: 0.8s; }
+
 
 /* ===== Contact Section Responsive ===== */
 @media (max-width: 991px) {
@@ -900,6 +1197,40 @@ form h2.heading span {
     }
 }
 
+/* ===== Portfolio Animations ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate Heading */
+.main-text h2 {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Animate Portfolio Cards */
+.row {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger the rows for a nice effect */
+.row:nth-child(1) { animation-delay: 0.4s; }
+.row:nth-child(2) { animation-delay: 0.6s; }
+.row:nth-child(3) { animation-delay: 0.8s; }
+.row:nth-child(4) { animation-delay: 1s; }
+.row:nth-child(5) { animation-delay: 1.2s; }
+.row:nth-child(6) { animation-delay: 1.4s; }
+
 /* ===== Responsive Design ===== */
 
 /* Tablets */
@@ -958,4 +1289,156 @@ form h2.heading span {
         border-radius: 10px; /* optional: slightly smaller radius */
     }
 }
+/* Tablets */
+@media (max-width: 991px) {
+    .row {
+        max-width: 300px;
+        margin: 0 auto; /* center the cards */
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .row {
+        max-width: 100%;
+    }
+
+    .row img {
+        width: 100%;
+        height: auto; /* ensure proper scaling */
+    }
+}
+/* Mobile fix */
+@media (max-width: 480px) {
+  .portfolio-content {
+    grid-template-columns: 1fr; /* force single column */
+    gap: 20px; /* reduce spacing */
+  }
+
+  .row {
+    width: 100%;
+    max-width: 100%; /* prevent overflow */
+  }
+
+  .row img {
+    width: 100%;
+    height: auto;
+  }
+}
+/* ===== Mobile navbar & animated hamburger (add to end of file) ===== */
+
+/* base adjustments (keep your existing .header styles - these augment) */
+.header { z-index: 9999; }
+
+/* hamburger button (hidden on desktop) */
+.menu-icon {
+  display: none;                  /* shown in mobile query below */
+  width: 36px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 10001;
+  padding: 0;
+}
+
+/* three lines */
+.menu-icon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* place lines */
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-icon span:nth-child(3) { bottom: 0; }
+
+/* active (hamburger -> X) */
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* desktop nav layout (you likely already have similar rules) */
+.header .navbar {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  transition: none;
+}
+
+/* mobile behaviour */
+@media (max-width: 768px) {
+
+  /* show hamburger */
+  .menu-icon { display: block; }
+
+  /* compact header padding */
+  .header { padding: 12px 6%; }
+
+  /* make nav slide in from left (full-screen panel) */
+  .header .navbar {
+    position: fixed;
+    top: 64px;                 /* adjust to header height */
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: rgba(19,19,19,0.98);
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 28px;
+    align-items: center;
+    justify-content: start;
+    overflow-y: auto;
+    transition: left 0.35s ease;
+    z-index: 10000;
+  }
+
+  /* when active -> slide into view */
+  .header .navbar.active {
+    left: 0;
+  }
+
+  /* links inside mobile menu */
+  .header .navbar a {
+    display: block;
+    padding: 12px 18px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    color: #fff;
+    transition: background .25s ease, transform .15s ease;
+  }
+
+  .header .navbar a:hover {
+    background: rgba(74,144,226,0.1);
+    transform: translateY(-3px);
+  }
+
+  /* optional: keep desktop animation-delay variable working */
+  .header .navbar a { animation-delay: calc(.12s * var(--i)); }
+
+  /* ensure the header remains above nav on some setups */
+  .header { position: fixed; width: 100%; left: 0; top: 0; }
+
+  /* if you want body not scroll when menu open, add a class via JS (optional) */
+  body.menu-open { overflow: hidden; }
+
+} /* end media */
+
+
 
