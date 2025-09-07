@@ -148,7 +148,7 @@ body
     justify-content: space-between;
     min-height: 100vh;
     padding: 60px 10%;
-    background: linear-gradient(135deg, #8b8a8a, #0f172a);
+    background: linear-gradient(135deg, #474747, #0f172a);
 ; 
     color: #fff;
 }
@@ -348,7 +348,7 @@ body
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #8b8a8a, #0f172a);
+    background: linear-gradient(135deg, #474747, #0f172a);
     display: grid;
     grid-template-columns: 1fr 1fr; /* text left, image right */
     align-items: center;
@@ -528,7 +528,7 @@ body
     width: 100%;
     height: 100vh;
     padding: 40px 10%;
-    background: linear-gradient(135deg, #8b8a8a, #0f172a);
+    background: linear-gradient(135deg, #474747, #0f172a);
     
 }
 
@@ -789,7 +789,7 @@ body
 .contact {
   width: 100%;
   padding: 60px 10%;
-  background: linear-gradient(135deg, #8b8a8a, #0f172a);
+  background: linear-gradient(135deg, #474747, #0f172a);
 }
 
 .contact-container {
@@ -1009,7 +1009,28 @@ form h2.heading {
 
 .contact-details:nth-child(1) { animation-delay: 0.4s; }
 .contact-details:nth-child(2) { animation-delay: 0.6s; }
-.contact-details:nth-child(3) { animation-delay: 0.8s; }
+.contact-details:nth-child(3) { animation-delay: 0.8s; } 
+
+/* Contact Links */
+.contact-details .detail a {
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.contact-details .detail a:hover {
+  color: #63b3ff;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+.contact-details .detail a:active {
+  color: #38bdf8;
+  transform: scale(0.97);
+}
 
 
 /* ===== Contact Section Responsive ===== */
@@ -1056,35 +1077,36 @@ form h2.heading {
 }
 
 
-
-
-
-
-
-
-
-.portfolio{
+.portfolio {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* use min-height instead of fixed height */
     padding: 40px 10%;
-    background: linear-gradient(135deg, #8b8a8a, #0f172a);
+    background: linear-gradient(135deg, #474747, #0f172a);
     text-align: center;
 }
-.main-text{
+
+/* ===== Heading ===== */
+.main-text {
     padding-top: 80px;
     margin-top: 50px;
 }
-.main-text h2{
+
+.main-text h2 {
     font-size: 55px;
     line-height: 1;
     margin-bottom: 10px;
     font-weight: bold;
     color: #fff;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
 }
+
 .main-text h2 span {
     color: #4A90E2; 
 }
-/* Portfolio Content - Stack in Column */
+
+/* ===== Portfolio Grid ===== */
 .portfolio-content {
     padding-top: 20px;
     display: grid;
@@ -1092,7 +1114,14 @@ form h2.heading {
     gap: 50px;
 }
 
-/* Each Row (Project Card) */
+/* ===== Portfolio Card (wrapper for row + links) ===== */
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Each Row (Project Card) ===== */
 .row {
     position: relative;
     overflow: hidden;
@@ -1100,15 +1129,24 @@ form h2.heading {
     box-shadow: 0 5px 15px #4A90E2;
     cursor: pointer;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease forwards;
 }
-
-
 
 .row:hover {
     transform: translateY(-5px);
 }
 
-/* Project Image */
+/* Stagger the animations */
+.row:nth-child(1) { animation-delay: 0.4s; }
+.row:nth-child(2) { animation-delay: 0.6s; }
+.row:nth-child(3) { animation-delay: 0.8s; }
+.row:nth-child(4) { animation-delay: 1s; }
+.row:nth-child(5) { animation-delay: 1.2s; }
+.row:nth-child(6) { animation-delay: 1.4s; }
+
+/* ===== Project Image ===== */
 .row img {
     width: 100%;
     height: auto;
@@ -1121,20 +1159,20 @@ form h2.heading {
     transform: scale(1.1);
 }
 
-/* Overlay Layer */
+/* ===== Overlay Layer ===== */
 .layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(74, 144, 226, 0.9); /* Blue overlay */
+    background: rgba(74, 144, 226, 0.9);
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2px;
+    padding: 15px;
     text-align: center;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -1147,7 +1185,7 @@ form h2.heading {
 /* Layer Text */
 .layer h5 {
     font-size: 20px;
-    margin: 10px 2px;
+    margin: 10px 0;
     font-weight: bold;
 }
 
@@ -1156,50 +1194,33 @@ form h2.heading {
     line-height: 1.5;
 }
 
-@keyframes slideRight{
-    0%{
-        transform:translateX(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-@keyframes slideLeft{
-    0%{
-        transform:translateX(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
+/* ===== Links Under Each Card ===== */
+.project-links {
+    margin-top: 12px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
-@keyframes slideTop{
-    0%{
-        transform:translateY(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
+.project-links .btn-link {
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    background: #4A90E2;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+    transition: all 0.3s ease;
 }
 
-@keyframes slideBottom{
-    0%{
-        transform:translateY(-100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
+.project-links .btn-link:hover {
+    background: #0f172a;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== Portfolio Animations ===== */
+/* ===== Animations ===== */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -1211,27 +1232,17 @@ form h2.heading {
   }
 }
 
-/* Animate Heading */
-.main-text h2 {
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.2s;
-}
 
-/* Animate Portfolio Cards */
-.row {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 0.8s ease forwards;
-}
 
-/* Stagger the rows for a nice effect */
-.row:nth-child(1) { animation-delay: 0.4s; }
-.row:nth-child(2) { animation-delay: 0.6s; }
-.row:nth-child(3) { animation-delay: 0.8s; }
-.row:nth-child(4) { animation-delay: 1s; }
-.row:nth-child(5) { animation-delay: 1.2s; }
-.row:nth-child(6) { animation-delay: 1.4s; }
+
+
+
+
+
+
+
+
+
 
 /* ===== Responsive Design ===== */
 
