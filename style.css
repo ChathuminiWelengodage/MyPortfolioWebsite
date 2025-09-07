@@ -148,7 +148,8 @@ body
     justify-content: space-between;
     min-height: 100vh;
     padding: 60px 10%;
-    background: linear-gradient(135deg, #333); 
+    background: linear-gradient(135deg, #333, #0f172a);
+; 
     color: #fff;
 }
 
