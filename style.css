@@ -148,7 +148,7 @@ body
     justify-content: space-between;
     min-height: 100vh;
     padding: 60px 10%;
-    background: linear-gradient(135deg, #333, #0f172a);
+    background: linear-gradient(135deg, #8b8a8a, #0f172a);
 ; 
     color: #fff;
 }
@@ -348,7 +348,7 @@ body
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: #333;
+    background: linear-gradient(135deg, #8b8a8a, #0f172a);
     display: grid;
     grid-template-columns: 1fr 1fr; /* text left, image right */
     align-items: center;
@@ -528,7 +528,7 @@ body
     width: 100%;
     height: 100vh;
     padding: 40px 10%;
-    background: #333
+    background: linear-gradient(135deg, #8b8a8a, #0f172a);
     
 }
 
@@ -789,7 +789,7 @@ body
 .contact {
   width: 100%;
   padding: 60px 10%;
-  background: #f8f9fa; /* light background */
+  background: linear-gradient(135deg, #8b8a8a, #0f172a);
 }
 
 .contact-container {
@@ -1067,7 +1067,7 @@ form h2.heading {
     width: 100%;
     height: 100vh;
     padding: 40px 10%;
-    background: #333;
+    background: linear-gradient(135deg, #8b8a8a, #0f172a);
     text-align: center;
 }
 .main-text{
