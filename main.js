@@ -33,4 +33,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 200); // staggered animation delay
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  skillCards.forEach(card => {
+    observer.observe(card);
+  });
+
+
+
 
