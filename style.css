@@ -148,7 +148,7 @@ body
     justify-content: space-between;
     min-height: 100vh;
     padding: 60px 10%;
-    background: #fff;
+    background: #eaecf5;
     color: black;
 }
 
@@ -526,15 +526,15 @@ body
 
 
 /* ===== Skills Section ===== */
-.myskills {
+/*.myskills {
     width: 100%;
     height: 100vh;
     padding: 40px 10%;
-    background: #cad0d7;
+    background: #eaecf5;
     
 }
 
-/* Headings */
+/* 
 .skills-text h2 {
     font-size: 55px;
     margin-bottom: 10px;
@@ -543,7 +543,7 @@ body
 }
 
 .myskills h2 span {
-    color: #4A90E2; /* Accent color */
+    color: #4A90E2; /* Accent color 
 }
 
 /*.skills-text h3 {
@@ -552,14 +552,14 @@ body
     color: #0f172a;
 }*/
 
-/* Skill Bars Container */
+/* Skill Bars Container 
 .Technical-bars {
     max-width: 650px;
     margin: 0 auto;
     text-align: left;
 }
 
-/* Each Bar */
+/* Each Bar *
 .bar {
     margin: 25px 0;
     display: flex;
@@ -567,20 +567,20 @@ body
     gap: 10px;
 }
 
-/* Icon Style */
+/* Icon Style *
 .bar i {
     font-size: 30px;
     min-width: 40px;
 }
 
-/* Skill Name */
+/* Skill Name *
 .bar .info {
     flex: 1;
     font-weight: 600;
     color: #0f172a;
 }
 
-/* Progress Line Container */
+/* Progress Line Container *
 .progress-line {
     position: relative;
     height: 10px;
@@ -590,16 +590,16 @@ body
     overflow: hidden;
 }
 
-/* Base span (start at 0) */
+/* Base span (start at 0) *
 .progress-line span {
     position: absolute;
     height: 100%;
     left: 0;
     border-radius: 5px;
-    width: 0;  /* Start empty */
+    width: 0;  /* Start empty 
 }
 
-/* Animate each skill with its own keyframes */
+/* Animate each skill with its own keyframes 
 .progress-line.html span {
     background: #E44D26;
     animation: htmlGrow 2s ease forwards;
@@ -616,7 +616,7 @@ body
     background: #386d9b;
     animation: pyGrow 2s ease forwards;
 }
-/* ==== Soft Skills Section ==== */
+/* ==== Soft Skills Section ==== 
 .skills-text {
     text-align: center;
     margin-top: 50px;
@@ -629,7 +629,7 @@ body
     color: #0f172a;
 }
 
-/* Radial Bars Container */
+/* Radial Bars Container 
 .radial-bars {
     position: relative;
     width: 180px;
@@ -639,15 +639,15 @@ body
     text-align: center;
 }
 
-/* SVG Circle Base (Background Circle) */
+/* SVG Circle Base (Background Circle) 
 .radial-bars svg {
     position: relative;
     width: 180px;
     height: 180px;
-    transform: rotate(-90deg); /* So progress starts at top */
+    transform: rotate(-90deg); /* So progress starts at top 
 }
 
-/* Gray Background Circle */
+/* Gray Background Circle 
 .radial-bars .progress-line {
     fill: none;
     stroke: #fff;
@@ -655,15 +655,15 @@ body
     stroke-linecap: round;
 }
 
-/* Animated Progress Circle */
+/* Animated Progress Circle 
 .radial-bars .path {
     fill: none;
     stroke: #4A90E2; /* Default color */
-    stroke-width: 15;
+    /*stroke-width: 15;
     stroke-linecap: round;
     stroke-dasharray: 502;   /* 2πr where r=80 → 2*π*80 ≈ 502 */
-    stroke-dashoffset: 502;  /* Hidden at start */
-    animation: progress 2s ease forwards;
+   /* stroke-dashoffset: 502;  /* Hidden at start */
+    /*animation: progress 2s ease forwards;
 }
 
 /* Different Path Colors */
@@ -671,7 +671,7 @@ body
 /*.radial-bars:nth-child(3) .path { stroke: #A020F0; } /* Problem Solving */
 /*.radial-bars:nth-child(4) .path { stroke: #2ecc71; } /* Team Work */
 
-/* Percentage in Middle */
+/* Percentage in Middle 
 .radial-bars .percentage {
     position: absolute;
     top: 50%;
@@ -682,7 +682,7 @@ body
     color: #0f172a;
 }
 
-/* Label Below Circle */
+/* Label Below Circle 
 .radial-bars .text {
     margin-top: 10px;
     font-size: 1rem;
@@ -690,7 +690,7 @@ body
     color: #0f172a;
     margin-bottom: 50px;
 }
-/* Base */
+/* Base 
 .skills-text { 
     text-align:center; 
     margin-top:40px; 
@@ -701,16 +701,16 @@ body
     color:#0f172a; }
 
 .radial-bars{
-  --circ: 502;          /* 2πr for r=80 */
-  --val: 0;             /* % (set per item below) */
-  --stroke: #4A90E2;    /* color (set per item below) */
+  --circ: 502;          /* 2πr for r=80 
+  --val: 0;             /* % (set per item below) 
+  --stroke: #4A90E2;    /* color (set per item below) 
   --offset: calc(var(--circ) - (var(--circ) * var(--val) / 100));
 
   position:relative;
   width:180px; height:180px;
   margin:14px; display:inline-block;
-}
-
+}*/
+/*
 .radial-bars svg{ width:180px; height:180px; transform:rotate(-90deg); }
 .radial-bars .progress-line{
   fill:none; stroke:#e6e6e6; stroke-width:15; stroke-linecap:round;
@@ -734,20 +734,20 @@ body
 @keyframes rb-fill { to { stroke-dashoffset: var(--offset); } }
 
 /* Correct mapping using nth-of-type: 1..4 are your four .radial-bars */
-.skills-text > .radial-bars:nth-of-type(1){ --val:65; --stroke:#0b1e34; } /* Communication */
-.skills-text > .radial-bars:nth-of-type(2){ --val:75; --stroke:#a06f20; } /* Creativity */
-.skills-text > .radial-bars:nth-of-type(3){ --val:60; --stroke:#450f67; } /* Problem Solving */
-.skills-text > .radial-bars:nth-of-type(4){ --val:85; --stroke:#135c31; } /* Team Work */
+/*.skills-text > .radial-bars:nth-of-type(1){ --val:65; --stroke:#0b1e34; } /* Communication */
+/*.skills-text > .radial-bars:nth-of-type(2){ --val:75; --stroke:#a06f20; } /* Creativity */
+/*.skills-text > .radial-bars:nth-of-type(3){ --val:60; --stroke:#450f67; } /* Problem Solving */
+/*.skills-text > .radial-bars:nth-of-type(4){ --val:85; --stroke:#135c31; } /* Team Work */
 
 
 
 /* Animation Keyframes */
-@keyframes progress {
+/*@keyframes progress {
     to {
-        stroke-dashoffset: var(--percent); /* Will set with CSS variable */
+        stroke-dashoffset: var(--percent); /* Will set with CSS variable 
     }
 }
-/* Keyframes for each */
+/* Keyframes for each 
 @keyframes htmlGrow {
     from { width: 0; }
     to { width: 90%; }
@@ -766,7 +766,7 @@ body
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 991px) {
+L/*@media (max-width: 991px) {
     .myskills h2 { font-size: 42px; }
     .myskills h3 { font-size: 1.3rem; }
 
@@ -796,14 +796,92 @@ body
     .radial-bars .text { font-size: 0.85rem; }
     
     .Technical-bars { max-width: 100%; }
+}*/
+.skills {
+  width: 100%;
+  padding: 60px 10%;
+  background: #1f1f1f;
+  text-align: center;
+  color: #fff;
 }
+.skills .main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  justify-content: center;
+  text-align: center;
+}
+
+
+.skills .main-text h2 {
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.skills .main-text h2 span {
+  color: #4A90E2;
+}
+
+.skills .main-text p {
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.skill-card {
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.7);
+}
+
+.skill-card i {
+  font-size: 50px;
+  color: #4A90E2;
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.skill-card p {
+  font-size: 15px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills .main-text h2 {
+    font-size: 40px;
+  }
+}
+
 
 
 /* ===== Contact Section ===== */
 .contact {
   width: 100%;
   padding: 60px 10%;
-  background: #fff;
+  background: #eaecf5;
 }
 
 .contact-container {
