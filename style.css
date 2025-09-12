@@ -824,48 +824,6 @@ form h2.heading {
 }
 
 
-/* ===== Contact Section Responsive ===== */
-@media (max-width: 991px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-box, form {
-    width: 100%;
-    max-width: 600px;
-  }
-
-  form h2.heading {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 576px) {
-  .contact {
-    padding: 40px 5%;
-  }
-
-  .contact-box h2,
-  form h2.heading {
-    font-size: 28px;
-  }
-
-  .contact-box .desc {
-    font-size: 0.95rem;
-  }
-
-  .field-box input,
-  .field-box textarea {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-}
 
 
 .portfolio {
@@ -1023,112 +981,6 @@ form h2.heading {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== Responsive Design ===== */
-
-/* Tablets */
-@media (max-width: 991px) {
-    .main-text h2 {
-        font-size: 40px;
-    }
-
-    .layer h5 {
-        font-size: 18px;
-    }
-
-    .layer p {
-        font-size: 13px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .portfolio {
-        padding: 40px 5%;
-    }
-
-    .main-text h2 {
-        font-size: 32px;
-    }
-
-    .portfolio-content {
-        gap: 20px;
-    }
-
-    .layer h5 {
-        font-size: 16px;
-    }
-
-    .layer p {
-        font-size: 8px;
-    }
-}
-/* Tablets */
-@media (max-width: 991px) {
-    .portfolio-content {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 30px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .portfolio-content {
-        grid-template-columns: 1fr; /* one column on small screens */
-        gap: 20px;
-    }
-
-    .row img {
-        border-radius: 10px; /* optional: slightly smaller radius */
-    }
-}
-/* Tablets */
-@media (max-width: 991px) {
-    .row {
-        max-width: 300px;
-        margin: 0 auto; /* center the cards */
-    }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .row {
-        max-width: 100%;
-    }
-
-    .row img {
-        width: 100%;
-        height: auto; /* ensure proper scaling */
-    }
-}
-/* Mobile fix */
-@media (max-width: 480px) {
-  .portfolio-content {
-    grid-template-columns: 1fr; /* force single column */
-    gap: 20px; /* reduce spacing */
-  }
-
-  .row {
-    width: 100%;
-    max-width: 100%; /* prevent overflow */
-  }
-
-  .row img {
-    width: 100%;
-    height: auto;
-  }
-}
 /* ===== Mobile navbar & animated hamburger (add to end of file) ===== */
 
 /* base adjustments (keep your existing .header styles - these augment) */
@@ -1285,6 +1137,162 @@ footer p a:hover {
         padding: 15px 5%;
         font-size: 0.9rem;
     }
+}
+/* ============================= */
+/* GLOBAL RESPONSIVENESS */
+/* ============================= */
+
+/* Tablets (≤ 991px) */
+@media (max-width: 991px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 8% 40px;
+  }
+
+  .home-content h1 {
+    font-size: 40px;
+  }
+
+  .home-content h3 {
+    font-size: 24px;
+  }
+
+  .home-img {
+    margin-top: 30px;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 60px 8%;
+    text-align: center;
+  }
+
+  .about-img {
+    margin-top: 30px;
+  }
+
+  .skills .main-text h2 {
+    font-size: 42px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 32px;
+  }
+
+  .home-content h3 {
+    font-size: 22px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .btn-box {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .about-text h2 {
+    font-size: 42px;
+  }
+
+  .about-text h4 {
+    font-size: 18px;
+  }
+
+  .skills .main-text h2 {
+    font-size: 38px;
+  }
+
+  .skills .main-text p {
+    font-size: 16px;
+  }
+
+  .contact-box h2 {
+    font-size: 1.5rem;
+  }
+
+  form h2.heading {
+    font-size: 42px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 12px 4%;
+  }
+}
+
+/* Small Mobile (≤ 576px) */
+@media (max-width: 576px) {
+  .home {
+    padding: 100px 5% 40px;
+  }
+
+  .home-content h1 {
+    font-size: 28px;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 15px;
+  }
+
+  .home-img .img-box {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .skills .main-text h2 {
+    font-size: 32px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .skill-card h3 {
+    font-size: 18px;
+  }
+
+  .skill-card p {
+    font-size: 14px;
+  }
+
+  form h2.heading {
+    font-size: 32px;
+  }
+
+  .portfolio .main-text h2 {
+    font-size: 32px;
+  }
+
+  .project-links .btn-link {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }
 
 
