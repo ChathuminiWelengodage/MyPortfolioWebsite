@@ -128,7 +128,6 @@ body
 
 
 
-
 /* ===== Home Section ===== */
 .home {
     display: flex;
@@ -357,8 +356,6 @@ body
   color: #0f172a;
 }
 
-
-
 /* Button */
 .about-text .btn-box {
     display: inline-block;
@@ -475,6 +472,7 @@ body
 .about-img .img-items img:hover {
     transform: scale(1.05) rotate(2deg);
 }
+
 
 
 .skills {
@@ -693,8 +691,6 @@ form h2.heading span {
     background: #4A90E2;
     transform: scale(1.05);
 }
-
-
 
 /* ===== Contact Form Animations ===== */
 .field-box input,
@@ -981,7 +977,6 @@ form h2.heading {
   }
 }
 
-/* ===== Mobile navbar & animated hamburger (add to end of file) ===== */
 
 /* base adjustments (keep your existing .header styles - these augment) */
 .header { z-index: 9999; }
@@ -1095,19 +1090,27 @@ form h2.heading {
   body.menu-open { overflow: hidden; }
 
 }
+
+
+
 /* ===== Footer Styling ===== */
 footer {
     left: 0;
-    margin-top: 10px;
+    margin: 0;
     width: 100%;
     background: #4A90E2;          /* dark background */
     color: #0f172a;               /* white text */
-    padding: 15px 0%;         /* top-bottom padding, horizontal spacing */
+    padding: 15px  0%;         /* top-bottom padding, horizontal spacing */
     text-align: center;        /* center the text */
-    position: fixed;
+    position: relative;
     bottom: 0;
     font-size: 0.95rem;
     z-index: 1000;
+}
+.footer-bottom {
+  text-align: center;         /* center text inside */
+  color: #fff;                /* white text */
+  margin: 0;                  /* remove any default margin */
 }
 
 footer p {
@@ -1138,9 +1141,6 @@ footer p a:hover {
         font-size: 0.9rem;
     }
 }
-/* ============================= */
-/* GLOBAL RESPONSIVENESS */
-/* ============================= */
 
 /* Tablets (≤ 991px) */
 @media (max-width: 991px) {
