@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // ===== Typed.js Animation =====
     var typed = new Typed(".text", {
-        strings: ["Programming", "Database", "System Analysis"],
+        strings: ["Programming", "Database", "Data Analysis"],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
