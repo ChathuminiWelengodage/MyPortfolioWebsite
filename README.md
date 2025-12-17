@@ -33,7 +33,7 @@ The project focuses on **clean UI design**, **responsive layouts**, and **modern
 
 ## 🧑‍🎓 About Me
 
-I am an **undergraduate student in Information Systems** at **Sabaragamuwa University of Sri Lanka**, with a strong interest in **web development, programming, and technology**. This portfolio website is part of my learning journey and reflects my continuous effort to improve my technical and design skills.
+I am an **undergraduate student in Information Systems** at **Sabaragamuwa University of Sri Lanka**. This portfolio website is part of my learning journey and reflects my continuous effort to improve my technical and design skills.
 
 ---
 
@@ -48,12 +48,6 @@ https://chathuminiwelengodage.github.io/MyPortfolioWebsite/
 ## 🚀 Deployment
 
 This project is deployed using **GitHub Pages**.
-
-Steps used:
-1. Push project files to GitHub repository
-2. Go to **Repository Settings → Pages**
-3. Select `main` branch and root folder
-4. Save and access the live URL
 
 ---
 
