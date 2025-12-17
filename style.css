@@ -1092,47 +1092,74 @@ form h2.heading {
 }
 
 
-
-/* ===== Footer Styling ===== */
-footer {
-    left: 0;
-    margin: 0;
-    width: 100%;
-    background: #4A90E2;          /* dark background */
-    color: #0f172a;               /* white text */
-    padding: 15px  0%;         /* top-bottom padding, horizontal spacing */
-    text-align: center;        /* center the text */
-    position: relative;
-    bottom: 0;
-    font-size: 0.95rem;
-    z-index: 1000;
+/* ===== FOOTER SPACING FIX ===== */
+.footer {
+  width: 100%;
+  background: #4A90E2;
+  color: #fff;
+  padding: 70px 10% 30px;   /* TOP / SIDES / BOTTOM */
 }
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;               /* SPACE BETWEEN COLUMNS */
+  align-items: start;
+}
+
+/* Footer boxes */
+.footer-box h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.footer-box p {
+  font-size: 15px;
+  line-height: 1.8;        /* VERTICAL TEXT SPACE */
+  margin-bottom: 10px;
+}
+
+.footer-box ul li {
+  margin-bottom: 12px;
+}
+
+.footer-box ul li a {
+  font-size: 15px;
+}
+
+/* Social icons spacing */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+/* Bottom section */
 .footer-bottom {
-  text-align: center;         /* center text inside */
-  color: #fff;                /* white text */
-  margin: 0;                  /* remove any default margin */
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  font-size: 14px;
 }
 
-footer p {
-    margin: 0;
-    color: #0f172a;               /* softer text color */
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 6% 30px;
+    text-align: center;
+  }
+
+  .footer-social a {
+    margin: 0 10px;
+  }
 }
 
-footer p span {
-    color: #4A90E2;            /* highlight name or year */
-    font-weight: bold;
-}
 
-/* ===== Hover effect if needed ===== */
-footer p a {
-    color: #4A90E2;
-    text-decoration: none;
-    transition: color 0.3s;
-}
 
-footer p a:hover {
-    color: #4A90E2;
-}
 
 /* ===== Responsive Footer ===== */
 @media (max-width: 576px) {
